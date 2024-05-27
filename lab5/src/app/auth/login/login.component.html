@@ -1,0 +1,15 @@
+<div class="container py-5 w-25">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <div class="form-group" >
+      <label>Tài khoản</label>
+      <input type="email" class="form-control" name="email" formControlName="email">
+      <span class="text-danger" ngModel *ngIf="loginForm.get('email')!.invalid && (loginForm.get('email')!.dirty || loginForm.get('email')!.touched)">Email khong hop le </span>
+    </div>
+    <div class="form-group">
+      <label>Mật khẩu</label>
+      <input type="password" class="form-control" name="password" formControlName="password">
+      <span class="text-danger" ngModel *ngIf="loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)">phai co it nhat 8 ky tu hoac 1 ky tu in hoa</span>
+    </div>
+    <button class="btn btn-primary" type="submit">Đăng Nhập</button>
+  </form>
+</div>
